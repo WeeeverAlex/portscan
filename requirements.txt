@@ -1,1 +1,1 @@
-tk
+pyftpdlib==1.5.6
