@@ -1,5 +1,6 @@
 # Port Scanner
-<img width="361" alt="Screenshot 2024-08-25 at 4 38 18 PM" src="https://github.com/user-attachments/assets/2420f1f7-bf59-4741-8f3a-c015d365be95">
+
+<img width="362" alt="Screenshot 2024-08-25 at 4 44 06 PM" src="https://github.com/user-attachments/assets/ef17b386-45ab-4ab9-ac0c-52856a9c6820">
 
 
 
