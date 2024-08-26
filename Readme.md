@@ -44,7 +44,7 @@ Certifique-se de ter o Python instalado. Este projeto foi desenvolvido usando Py
    ```
 
 2. **Use a Interface Gráfica:**
-   - Insira o endereço do host no campo "Host" (por exemplo, `localhost` ou o IP do servidor).
+   - Insira o endereço do host ou IP no campo "Host or IP" (por exemplo, `localhost`, `google.com`, `etc` ou o `IP do servidor`).
    - Insira o intervalo de portas para escanear (`Start Port` e `End Port`).
    - Clique em "Scan" para iniciar o escaneamento.
 
@@ -53,7 +53,7 @@ Certifique-se de ter o Python instalado. Este projeto foi desenvolvido usando Py
 
 ### 4. Testes
 
-Para verificar o funcionamento da ferramenta, você pode testar portas com serviços ativos em sua máquina local, como iniciar um servidor HTTP em `localhost:8080` ou um servidor FTP em `localhost:21`.
+Para verificar o funcionamento da ferramenta, você pode testar portas com serviços ativos em sua máquina local, como iniciar um servidor HTTP em `localhost:8080` ou um servidor FTP em `localhost:21` ou utilizando o Host `scanme.nmap.org`.
 
 ```bash
 # Exemplo para iniciar um servidor HTTP em localhost:8080
