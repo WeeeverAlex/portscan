@@ -58,32 +58,54 @@ def scan_ports_gui():
         result = scan_port(ip, port)
         result_text.insert(tk.END, result)
 
+# Função para iniciar o scanner
+def start_scanner():
+    menu_frame.pack_forget()
+    scanner_frame.pack()
+
+# Função para sair do programa
+def exit_program():
+    root.quit()
+
 # Configuração da interface gráfica usando Tkinter
 root = tk.Tk()
 root.title("Port Scanner")
 
+# Ajustar o tamanho da janela
+root.geometry("600x400")  # Define o tamanho da janela para 600x400 pixels
+
+# Frame do Menu Principal
+menu_frame = tk.Frame(root)
+tk.Label(menu_frame, text="Bem-vindo ao Port Scanner", font=('Helvetica', 20)).pack(pady=40)  # Fonte maior e mais espaçamento
+tk.Button(menu_frame, text="Iniciar Scanner", command=start_scanner, width=30, height=2).pack(pady=20)  # Botão maior
+tk.Button(menu_frame, text="Sair", command=exit_program, width=30, height=2).pack(pady=10)  # Botão maior
+menu_frame.pack()
+
+# Frame do Scanner de Portas
+scanner_frame = tk.Frame(root)
+
 # Campo para o endereço do host
-tk.Label(root, text="Host or IP:").grid(row=0, column=0)
-host_entry = tk.Entry(root)
-host_entry.grid(row=0, column=1)
+tk.Label(scanner_frame, text="Host or IP:").grid(row=0, column=0, padx=10, pady=10)
+host_entry = tk.Entry(scanner_frame)
+host_entry.grid(row=0, column=1, padx=10, pady=10)
 
 # Campo para a porta inicial
-tk.Label(root, text="Start Port:").grid(row=1, column=0)
-start_port_entry = tk.Entry(root)
-start_port_entry.grid(row=1, column=1)
+tk.Label(scanner_frame, text="Start Port:").grid(row=1, column=0, padx=10, pady=10)
+start_port_entry = tk.Entry(scanner_frame)
+start_port_entry.grid(row=1, column=1, padx=10, pady=10)
 
 # Campo para a porta final
-tk.Label(root, text="End Port:").grid(row=2, column=0)
-end_port_entry = tk.Entry(root)
-end_port_entry.grid(row=2, column=1)
+tk.Label(scanner_frame, text="End Port:").grid(row=2, column=0, padx=10, pady=10)
+end_port_entry = tk.Entry(scanner_frame)
+end_port_entry.grid(row=2, column=1, padx=10, pady=10)
 
 # Botão para iniciar o escaneamento
-scan_button = tk.Button(root, text="Scan", command=scan_ports_gui)
-scan_button.grid(row=3, column=0, columnspan=2)
+scan_button = tk.Button(scanner_frame, text="Scan", command=scan_ports_gui)
+scan_button.grid(row=3, column=0, columnspan=2, pady=20)
 
 # Caixa de texto para mostrar os resultados
-result_text = tk.Text(root, height=10, width=50)
-result_text.grid(row=4, column=0, columnspan=2)
+result_text = tk.Text(scanner_frame, height=10, width=50)
+result_text.grid(row=4, column=0, columnspan=2, padx=10, pady=10)
 
 # Inicializa a interface gráfica
 root.mainloop()
