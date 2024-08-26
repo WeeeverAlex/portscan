@@ -18,12 +18,20 @@ well_known_ports = {
     # Adicione mais portas conforme necessário
 }
 
+# Função para resolver nome de domínio em IP
+def resolve_host(host):
+    try:
+        ip = socket.gethostbyname(host)
+        return ip
+    except socket.gaierror:
+        return None
+
 # Função para escanear uma única porta
-def scan_port(host, port):
+def scan_port(ip, port):
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.settimeout(1)
-        result = sock.connect_ex((host, port))
+        result = sock.connect_ex((ip, port))
         if result == 0:
             service = well_known_ports.get(port, 'Unknown service')
             return f"Port {port} is open ({service})\n"
@@ -36,12 +44,18 @@ def scan_port(host, port):
 # Função para escanear um intervalo de portas
 def scan_ports_gui():
     host = host_entry.get()
+    ip = resolve_host(host)
+    if ip is None:
+        result_text.insert(tk.END, f"Could not resolve {host}\n")
+        return
+    
     start_port = int(start_port_entry.get())
     end_port = int(end_port_entry.get())
     result_text.delete(1.0, tk.END)
     
+    result_text.insert(tk.END, f"Scanning {host} ({ip}) from port {start_port} to {end_port}\n")
     for port in range(start_port, end_port + 1):
-        result = scan_port(host, port)
+        result = scan_port(ip, port)
         result_text.insert(tk.END, result)
 
 # Configuração da interface gráfica usando Tkinter
@@ -49,7 +63,7 @@ root = tk.Tk()
 root.title("Port Scanner")
 
 # Campo para o endereço do host
-tk.Label(root, text="Host:").grid(row=0, column=0)
+tk.Label(root, text="Host or IP:").grid(row=0, column=0)
 host_entry = tk.Entry(root)
 host_entry.grid(row=0, column=1)
 
