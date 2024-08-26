@@ -1,6 +1,10 @@
 # Port Scanner
+<img src="https://github.com/user-attachments/assets/9a7a493c-7051-4dd4-9c7a-603d33539515" width="350">
+<img src="https://github.com/user-attachments/assets/23e8cb74-5dd6-4eec-98e1-a58775d98ac5" width="350">
+<img src="https://github.com/user-attachments/assets/0b9ea9e3-08c4-47b3-846d-be3960fe1c66" width="350">
+<img src="https://github.com/user-attachments/assets/52d8170f-a19c-448a-845c-a894460ad05e" width="350">
 
-<img width="362" alt="Screenshot 2024-08-25 at 4 44 06 PM" src="https://github.com/user-attachments/assets/ef17b386-45ab-4ab9-ac0c-52856a9c6820">
+
 
 
 
